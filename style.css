@@ -1,0 +1,81 @@
+* {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.recetes-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.recete-link {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border-radius: 15px;
+  filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.3));
+}
+.recete-link:hover::before {
+  content: "";
+  position: absolute;
+  display: block;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
+  border-radius: inherit;
+}
+.recete-marker {
+  position: absolute;
+  display: block;
+  top: 10%;
+  right: 0;
+  bottom: auto;
+  left: auto;
+  color: rgb(255, 111, 97);
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-top-left-radius: 45px;
+  border-bottom-left-radius: 45px;
+}
+.recete-photo {
+  width: 310px;
+  height: 420px;
+  border-radius: inherit;
+}
+.recete-title {
+  position: absolute;
+  display: block;
+  top: auto;
+  right: auto;
+  bottom: 0;
+  left: auto;
+  width: 100%;
+  text-align: center;
+  color: #000000;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 0 0 15px 15px;
+}
+.recete-title-icon {
+  position: absolute;
+  display: block;
+  top: -50%;
+  right: calc(50% - 24px);
+  bottom: auto;
+  left: auto;
+  width: 48px;
+  height: 48px;
+  padding: 8px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  fill: rgb(255, 111, 97);
+}
+
+/*# sourceMappingURL=style.css.map */

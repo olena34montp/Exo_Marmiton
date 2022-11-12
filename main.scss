@@ -1,0 +1,62 @@
+@use "variables";
+@use "mixin";
+
+* {
+    @include mixin.reset;
+}
+
+.recetes {
+    &-list {
+        @include mixin.flex (row, flex-start, flex-start);
+    }
+}
+.recete {
+    &-link {
+        @include mixin.position (false);
+        @include mixin.flex (column, flex-start, flex-start);
+        border-radius: variables.$border-radius;
+        filter: drop-shadow(0 10px 5px rgba(0, 0, 0, .3));
+
+        &:hover::before {
+            content: "";
+            @include mixin.position (true);
+            display: block;
+            @include mixin.size (100%, 100%);
+            background: variables.$shadow-gradient;
+            border-radius: inherit;
+        }
+    }
+    &-marker {
+        @include mixin.position (true);
+        @include mixin.position-coordinates(10%, 0, auto, auto);
+        color: variables.$primary-color;
+        padding: 10px 20px;
+        background-color: rgba(255, 255, 255, .8);
+        border-top-left-radius: calc(variables.$border-radius * 3);
+        border-bottom-left-radius: calc(variables.$border-radius * 3);
+
+    }
+    &-photo {
+        @include mixin.size (310px, 420px);
+        border-radius: inherit;
+    }
+    &-title {
+        @include mixin.position (true);
+        @include mixin.position-coordinates (auto, auto, 0, auto);
+        width: 100%;
+        text-align: center;
+        color: #000000;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 0 0 variables.$border-radius variables.$border-radius;
+    }
+    &-title-icon {
+        @include mixin.position (true);
+        @include mixin.position-coordinates(-50%, calc(50% - 24px), auto, auto);
+        @include mixin.size (48px, 48px);
+        padding: 8px;
+        background-color: #ffffff;
+        border-radius: 50%;
+        fill: variables.$primary-color;
+    }
+}
